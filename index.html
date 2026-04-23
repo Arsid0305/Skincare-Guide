@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Уход-протокол</title>
+
+    <!-- Иконка для браузера и экрана телефона -->
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA8klEQVR4nGNkQANSehr/0cWoCZ5dusGIzGeip+XY7GDCJUEvRzBis9zAz50mFl/YtBOF/+zSDUZGelmOyxEoDiDF8q3NE1D43rUFZDmCCY86oi3HJUYMINkB+CwixxFkhQA1AUkOIMaHpIYCTUKAFEfQLAqIdcTQSgMD7gBSChuaOIAWgGQHUDsUyAoBYhxBrEPJjgJ8FpASSmQ7ADmfI1tIahSxkOsAdEBu2qC4OqY0UQ69bEhN35PlAGoDstsD1CqQSMoFNK8L0JvMtADodjCh99Vo6QisHRMYh55dM5jlDAxIUYAeEvSwHMUB9HIEuh0A68heZNAHGxIAAAAASUVORK5CYII=">
+    <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAFaElEQVR4nO3dwY3UQBBG4Z4VURABJ0QWHJCIhQQ4kQCxrMRhs1jtaSPYNOAAhsFrj9t2V1X3X++7cEGeHvmpKA8DeymB3r5/9zPy9WHj5en5EvXabi9MvLl5RW76IkSMJZZxm1yYkFHDIuymFyRkHNEy7CYXImS00CLsu7MXIGa00qKlU0ETM1o729ShEU/I8HBkBdk9oYkZXo60titoYoa3vc1VB03MiLKnvaqgiRnRahvcDJqY0YuaFk9/Dg305GbQTGf0ZqvJ1aCJGb261eZi0MSM3q01yg4NKa+CZjpjFEutvok4yJIPnz9GHwEnPN4/RB+hlDL7cpL3dCZiTd5xX3+JKWRCE7K26f5GTO2/O7TXdCbmPLzu9XW7rp9yEHM+3vfcLWhizsvz3t+VYr9uEDOsG5gaNp/QxIyJRwumQRMz5qybMAuamLHGso1u/qZQyY9v36t+36evX0zPkdHF4oEw43SujXhNxrgt/uKFCX3S2ZDn18kYdksEfVCrkNeuS9jHNH8ozLBuWMXs/RrRLFphQu/gHRnTej/+xUqlyImZYVq3QtAVegiqhzOMgKA39BRST2fpFUHf0GNAPZ6pJwS9oudwej5bNIKGFIJeMMIEHOGMEQh6ZqRQRjqrF4KGFIK+MuLEG/HMlggaUgj6j5En3chnb42gIYWgi8aEU3gPLRA0pKQPWmmyKb2Xo9IHDS0EDSmpg1b8I1rxPe2ROmjoIWhBmac0QUMKQYvKOqXTBp3hhmd4j3Npg4YmghaXbUoTdAKZoiZoSCHoJLJMaYKGFIKGFIJOJMPaQdCQQtCQQtDJqK8dBA0pBA0paYPmJ0tpShs0NBF0QsoPhgQNKQQNKamD5sFQT+qgoYegISV90KwdWtIHDS0EXZjSSggaUgj6D6a0BoKGFIK+wpQeH0FDCkHPZJjSyu+RoBco33B1BA0pBL2CKT0mgr6BqMdD0BvUolZ7P3MEXUE9AiUEXYmox0DQO3z6+mXosEc+ey2CPiBDGKMi6INGn9aqCPqkUcIe4YwtvIk+gIrrYJT/Z6LeEbSB+TSMDjzLdC6FlcNFZFCZYi6FoCGGoJ1ETMps07kUgnblGVjGmEshaIghaEden3Zknc6lELSczDGXwufQbqync/aQJ0xoB7dibhEiMf/DhA40hTj9uneKE/JrBG1sLdKlGGvDJuR1BG3o6N5MsMexQwcgWDsEbWTPqoF2CBpSCNoA0zkOQTcW/WX+7AjaCdPZB0E3xKoRj6AbYdXoA0EbYzr7IugGWDX6QdCQQtAnMZ37QtAn8CDYH4I2wHSOQ9AHsWr0iaAPYNXoF0E3xHSOR9A7sWr0jaAhhaB3YDr3j6Ar8SA4BoI+iencF4KuwKoxDoLewKoxFoI+iOncJ4K+gVVjPAQNKQS9guk8JoJeMcqPPMb/CHrDddgE3j+CrkTMY2ge9OP9Q+tLQpRFK0xoSCFoSLl7eXq+tL4oawe2WDTy8vR8YUJDilnQTGmssWzDdEITNeasmzBfOYgaE48W7kr5vUxbvghRw7qBqWG3h0Kizsvz3rt+ykHU+Xjf879BW68dE6LOw+teX7cb8rO+pzf64fPHiJeHscih9Woqv33/7mfEQYh7bFERzzeLkAm9hFUELbx6KPTapYGzllrluxyQshg0Uxq9W2t0dUITNXp1q82bKwdRozdbTbJDQ8pm0Exp9KKmxaoJTdSIVttg9cpB1Iiyp71dOzRRw9ve5nY/FBI1vBxp7VScUV9kgrYzQ/PUx3ZMa7R2tqnTn0MTNVpp0VLTGFlBcETLoWgyXQkbNSz+dDddFwgbSyzXVLf9l7hz83rWCn2gI3JNkR8U/AK8+c6mGvJBggAAAABJRU5ErkJggg==">
+
+    <!-- PWA: название под иконкой на телефоне -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Уход">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#1A2E28">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sage: #4A7C6F;
+            --sage-light: #7BB5A4;
+            --sage-dim: #C8DDD7;
+            --sage-bg: #EDF3F0;
+            --cream: #FAF6EF;
+            --warm: #C8855A;
+            --warm-bg: #FEF2EA;
+            --dark: #1A2E28;
+            --mid: #3D5A52;
+            --soft: #6B8E84;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--sage-bg);
+            font-family: 'Manrope', sans-serif;
+            color: var(--dark);
+            min-height: 100vh;
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+
+        /* HEADER */
+        .header {
+            background: var(--dark);
+            padding: 52px 20px 28px;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -60px; right: -60px;
+            width: 200px; height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(74,124,111,0.4) 0%, transparent 70%);
+        }
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -30px; left: 20px;
+            width: 120px; height: 120px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(123,181,164,0.2) 0%, transparent 70%);
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(123,181,164,0.2);
+            border: 1px solid rgba(123,181,164,0.4);
+            color: var(--sage-light);
+            font-family: 'Manrope', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 40px;
+            margin-bottom: 16px;
+        }
+        h1 {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        h1 span { color: var(--sage-light); }
+        .subtitle {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        /* NAV TABS */
+        .nav-tabs {
+            display: flex;
+            gap: 8px;
+            padding: 16px 20px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            background: var(--dark);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-tabs::-webkit-scrollbar { display: none; }
+        .tab {
+            flex-shrink: 0;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.45);
+            background: rgba(255,255,255,0.06);
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+            white-space: nowrap;
+        }
+        .tab.active {
+            background: var(--sage);
+            color: #fff;
+        }
+
+        /* SECTIONS */
+        .section { display: none; padding: 20px 16px 32px; }
+        .section.active { display: block; }
+
+        /* STEP CARD */
+        .step-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 18px;
+            margin-bottom: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            animation: fadeUp 0.3s ease both;
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .step-card:nth-child(2) { animation-delay: 0.05s; }
+        .step-card:nth-child(3) { animation-delay: 0.10s; }
+        .step-card:nth-child(4) { animation-delay: 0.15s; }
+        .step-card:nth-child(5) { animation-delay: 0.20s; }
+        .step-card:nth-child(6) { animation-delay: 0.25s; }
+
+        .step-top {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .step-icon {
+            width: 42px; height: 42px;
+            border-radius: 14px;
+            background: var(--sage-bg);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        .step-meta { flex: 1; }
+        .step-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 2px;
+        }
+        .step-product {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+        .step-time {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--soft);
+            background: var(--sage-bg);
+            padding: 4px 10px;
+            border-radius: 20px;
+            flex-shrink: 0;
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+        .chip {
+            background: var(--sage-bg);
+            color: var(--mid);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+        .warn {
+            background: var(--warm-bg);
+            color: var(--warm);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 12px;
+        }
+        .ok {
+            background: #EAF5F0;
+            color: #3A7A5E;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 12px;
+        }
+
+        /* ALGO CARDS */
+        .algo-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 20px 18px;
+            margin-bottom: 14px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .algo-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .algo-icon {
+            width: 36px; height: 36px;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 18px;
+        }
+        .algo-icon.morning { background: #FFF5E0; }
+        .algo-icon.evening { background: #EEE6FA; }
+        .algo-title {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .flow {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .flow-step {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--sage-bg);
+        }
+        .flow-step:last-child { border-bottom: none; }
+        .flow-num {
+            width: 26px; height: 26px;
+            border-radius: 50%;
+            background: var(--sage);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+        .flow-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--dark);
+            flex: 1;
+        }
+        .flow-product {
+            font-size: 11px;
+            color: var(--soft);
+            font-weight: 500;
+        }
+
+        .algo-tip {
+            margin-top: 14px;
+            background: var(--sage-bg);
+            border-radius: 12px;
+            padding: 10px 14px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--mid);
+        }
+
+        /* RULES */
+        .rules-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 20px 18px;
+            margin-bottom: 14px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .card-title {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .rule-item {
+            display: flex;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--sage-bg);
+            align-items: flex-start;
+        }
+        .rule-item:last-child { border-bottom: none; }
+        .rule-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--sage);
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+        .rule-text {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--mid);
+            line-height: 1.5;
+        }
+
+        .stop-card {
+            background: var(--warm-bg);
+            border-radius: 20px;
+            padding: 20px 18px;
+            margin-bottom: 14px;
+        }
+        .stop-title {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--warm);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .stop-item {
+            display: flex;
+            gap: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(200,133,90,0.15);
+            align-items: center;
+        }
+        .stop-item:last-child { border-bottom: none; }
+        .stop-text {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--warm);
+        }
+        .stop-action {
+            font-size: 12px;
+            color: rgba(200,133,90,0.8);
+            font-weight: 500;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(200,133,90,0.2);
+        }
+
+        .key-card {
+            background: var(--dark);
+            border-radius: 20px;
+            padding: 20px 18px;
+            margin-bottom: 14px;
+        }
+        .key-title {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--sage-light);
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+        .key-text {
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.65;
+        }
+        .key-text strong { color: #fff; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="badge">Уход-протокол · 2025</div>
+    <h1>ЗАЩИТА<br><span>+ АНТИОКСИДАНТЫ</span></h1>
+    <div class="subtitle">контроль воспаления · минимальные слои</div>
+</div>
+
+<div class="nav-tabs">
+    <button class="tab active" onclick="switchTab('products', this)">Средства</button>
+    <button class="tab" onclick="switchTab('algo', this)">Алгоритм</button>
+    <button class="tab" onclick="switchTab('rules', this)">Правила</button>
+    <button class="tab" onclick="switchTab('risks', this)">Риски</button>
+</div>
+
+<!-- СРЕДСТВА -->
+<div class="section active" id="products">
+
+    <div class="step-card">
+        <div class="step-top">
+            <div class="step-icon">🧼</div>
+            <div class="step-meta">
+                <div class="step-label">Очищение · утро (опционально)</div>
+                <div class="step-product">Round Lab Dokdo Cleanser</div>
+            </div>
+            <div class="step-time">☀️ утро</div>
+        </div>
+        <div class="chips">
+            <div class="chip">нужен: есть себум / SPF с вечера</div>
+        </div>
+        <div class="warn">⚠️ Не нужен: кожа чистая или есть сухость → лишнее умывание обезвоживает, хуже переносится Vit C</div>
+    </div>
+
+    <div class="step-card">
+        <div class="step-top">
+            <div class="step-icon">🍊</div>
+            <div class="step-meta">
+                <div class="step-label">Витамин C · утро</div>
+                <div class="step-product">La Roche-Posay C10</div>
+            </div>
+            <div class="step-time">☀️ утро</div>
+        </div>
+        <div class="chips">
+            <div class="chip">2–4 капли</div>
+            <div class="chip">сухая кожа (!)</div>
+            <div class="chip">пауза 2–5 мин</div>
+        </div>
+        <div class="warn">⚠️ SPF раньше времени → скатывание + неравномерная защита</div>
+        <div style="margin-top:8px" class="warn">⚠️ Тёмно-оранжевый цвет → выбросить (окисление)</div>
+    </div>
+
+    <div class="step-card">
+        <div class="step-top">
+            <div class="step-icon">👁️</div>
+            <div class="step-meta">
+                <div class="step-label">Зона глаз · утро</div>
+                <div class="step-product">The Ordinary Caffeine Solution 5%</div>
+            </div>
+            <div class="step-time">☀️ утро</div>
+        </div>
+        <div class="chips">
+            <div class="chip">работает только на отёки</div>
+            <div class="chip">не влияет на морщины</div>
+        </div>
+        <div class="warn">⚠️ Близко к слизистой → отёки усиливаются. Избыток → пересушивание</div>
+    </div>
+
+    <div class="step-card">
+        <div class="step-top">
+            <div class="step-icon">☀️</div>
+            <div class="step-meta">
+                <div class="step-label">SPF · утро</div>
+                <div class="step-product">LRP Anthelios UVMune 400 SPF50+</div>
+            </div>
+            <div class="step-time">☀️ утро</div>
+        </div>
+        <div class="chips">
+            <div class="chip">1 слой → 60 сек → 2 слой</div>
+            <div class="chip">жидкая текстура</div>
+        </div>
+        <div class="warn">⚠️ Сразу 2 пальца → стекает, попадает в глаза, жирный блеск. Два этапа обязательно</div>
+    </div>
+
+    <div class="step-card">
+        <div class="step-top">
+            <div class="step-icon">💧</div>
+            <div class="step-meta">
+                <div class="step-label">Мицеллярка · вечер (1-й этап)</div>
+                <div class="step-product">Мицеллярная вода</div>
+            </div>
+            <div class="step-time">🌙 вечер</div>
+        </div>
+        <div class="chips">
+            <div class="chip">снять SPF / макияж</div>
+            <div class="chip">обязательно смыть</div>
+        </div>
+        <div class="warn">⚠️ Не смыть → ПАВы на коже → раздражение под следующим слоем</div>
+    </div>
+
+    <div class="step-card">
+        <div class="step-top">
+            <div class="step-icon">🧼</div>
+            <div class="step-meta">
+                <div class="step-label">Очищение · вечер (2-й этап)</div>
+                <div class="step-product">Round Lab Dokdo Cleanser</div>
+            </div>
+            <div class="step-time">🌙 вечер</div>
+        </div>
+        <div class="chips">
+            <div class="chip">после мицеллярки</div>
+            <div class="chip">при слабом загрязнении — осторожно</div>
+        </div>
+        <div class="warn">⚠️ Двойное очищение при слабом загрязнении → избыточное обезжиривание барьера</div>
+    </div>
+
+    <div class="step-card">
+        <div class="step-top">
+            <div class="step-icon">💧</div>
+            <div class="step-meta">
+                <div class="step-label">Тонер · вечер (опционально)</div>
+                <div class="step-product">Anua Heartleaf Toner</div>
+            </div>
+            <div class="step-time">🌙 вечер</div>
+        </div>
+        <div class="chips">
+            <div class="chip">2 слоя перед азелаиновой</div>
+            <div class="chip">баланс воды</div>
+        </div>
+        <div class="ok">✔ Рекомендован перед азелаиновой — компенсирует отсутствие воды в формуле</div>
+    </div>
+
+    <div class="step-card">
+        <div class="step-top">
+            <div class="step-icon">🔬</div>
+            <div class="step-meta">
+                <div class="step-label">Азелаиновая · вечер</div>
+                <div class="step-product">The Ordinary Azelaic Acid 10%</div>
+            </div>
+            <div class="step-time">🌙 вечер</div>
+        </div>
+        <div class="chips">
+            <div class="chip">пауза 5–10 мин после очищения</div>
+            <div class="chip">тонкий слой</div>
+            <div class="chip">перед кремом</div>
+        </div>
+        <div class="warn">⚠️ Силиконовая база — нет воды внутри. Без тонера перед → стянутость</div>
+        <div style="margin-top:8px" class="warn">⚠️ Крем ПОСЛЕ → скатывание, плёнка, микровоспаления</div>
+    </div>
+
+    <div class="step-card">
+        <div class="step-top">
+            <div class="step-icon">🧴</div>
+            <div class="step-meta">
+                <div class="step-label">Крем · вечер</div>
+                <div class="step-product">Round Lab Birch Juice Moisturizing Cream</div>
+            </div>
+            <div class="step-time">🌙 вечер</div>
+        </div>
+        <div class="chips">
+            <div class="chip">лёгкий, даёт окклюзию</div>
+            <div class="chip">финальный слой</div>
+        </div>
+        <div class="warn">⚠️ Избыток → утренние отёки</div>
+    </div>
+
+</div>
+
+<!-- АЛГОРИТМ -->
+<div class="section" id="algo">
+
+    <div class="algo-card">
+        <div class="algo-header">
+            <div class="algo-icon morning">🌞</div>
+            <div class="algo-title">Утренний ритуал</div>
+        </div>
+        <div class="flow">
+            <div class="flow-step">
+                <div class="flow-num">1</div>
+                <div>
+                    <div class="flow-name">Очищение <span style="font-size:11px;color:var(--soft)">(опционально)</span></div>
+                    <div class="flow-product">Round Lab Dokdo Cleanser · только при себуме или SPF с вечера</div>
+                </div>
+            </div>
+            <div class="flow-step">
+                <div class="flow-num">2</div>
+                <div>
+                    <div class="flow-name">Витамин C</div>
+                    <div class="flow-product">LRP C10 · 2–4 капли, сухая кожа · пауза 2–5 мин</div>
+                </div>
+            </div>
+            <div class="flow-step">
+                <div class="flow-num">3</div>
+                <div>
+                    <div class="flow-name">Зона глаз</div>
+                    <div class="flow-product">The Ordinary Caffeine 5% · только на отёки</div>
+                </div>
+            </div>
+            <div class="flow-step">
+                <div class="flow-num">4</div>
+                <div>
+                    <div class="flow-name">SPF — два этапа</div>
+                    <div class="flow-product">Anthelios UVMune 400 · 1 слой → 60 сек → 2 слой</div>
+                </div>
+            </div>
+        </div>
+        <div class="algo-tip">💡 Крем утром убран — SPF содержит достаточно увлажняющих компонентов. Лишний слой = риск скатывания</div>
+    </div>
+
+    <div class="algo-card">
+        <div class="algo-header">
+            <div class="algo-icon evening">🌙</div>
+            <div class="algo-title">Вечер — стандарт (без азелаиновой)</div>
+        </div>
+        <div class="flow">
+            <div class="flow-step">
+                <div class="flow-num">1</div>
+                <div>
+                    <div class="flow-name">Мицеллярка → смыть водой</div>
+                    <div class="flow-product">Снять SPF / макияж · ПАВы обязательно смыть</div>
+                </div>
+            </div>
+            <div class="flow-step">
+                <div class="flow-num">2</div>
+                <div>
+                    <div class="flow-name">Гель-очищение</div>
+                    <div class="flow-product">Round Lab Dokdo Cleanser</div>
+                </div>
+            </div>
+            <div class="flow-step">
+                <div class="flow-num">3</div>
+                <div>
+                    <div class="flow-name">Тонер <span style="font-size:11px;color:var(--soft)">(опционально)</span></div>
+                    <div class="flow-product">Anua Heartleaf · при ощущении сухости</div>
+                </div>
+            </div>
+            <div class="flow-step">
+                <div class="flow-num">4</div>
+                <div>
+                    <div class="flow-name">Крем</div>
+                    <div class="flow-product">Round Lab Birch Juice · без избытка → отёки утром</div>
+                </div>
+            </div>
+        </div>
+        <div class="algo-tip">🔄 Стандартный вечер: восстановление барьера, без активов</div>
+    </div>
+
+    <div class="algo-card">
+        <div class="algo-header">
+            <div class="algo-icon evening">🔬</div>
+            <div class="algo-title">Вечер — с азелаиновой (2–3 р/нед)</div>
+        </div>
+        <div class="flow">
+            <div class="flow-step">
+                <div class="flow-num">1</div>
+                <div>
+                    <div class="flow-name">Мицеллярка → смыть · Гель</div>
+                    <div class="flow-product">Round Lab Dokdo Cleanser</div>
+                </div>
+            </div>
+            <div class="flow-step">
+                <div class="flow-num">2</div>
+                <div>
+                    <div class="flow-name">Пауза 5–10 мин</div>
+                    <div class="flow-product">Критично — снижает раздражение. Пропустить → щипание + покраснение</div>
+                </div>
+            </div>
+            <div class="flow-step">
+                <div class="flow-num">3</div>
+                <div>
+                    <div class="flow-name">Тонер · 2 слоя</div>
+                    <div class="flow-product">Anua Heartleaf · компенсирует отсутствие воды в азелаиновой</div>
+                </div>
+            </div>
+            <div class="flow-step">
+                <div class="flow-num">4</div>
+                <div>
+                    <div class="flow-name">Азелаиновая</div>
+                    <div class="flow-product">The Ordinary 10% · тонкий слой · строго перед кремом</div>
+                </div>
+            </div>
+            <div class="flow-step">
+                <div class="flow-num">5</div>
+                <div>
+                    <div class="flow-name">Крем</div>
+                    <div class="flow-product">Round Lab Birch Juice · финальный слой</div>
+                </div>
+            </div>
+        </div>
+        <div class="algo-tip">⚠️ Крем ПОСЛЕ азелаиновой → скатывание + плёнка. Порядок нарушать нельзя</div>
+    </div>
+
+    <div class="algo-card">
+        <div class="algo-header">
+            <div class="algo-icon" style="background:#E8F4F0">🧖</div>
+            <div class="algo-title">Сауна — специальный протокол</div>
+        </div>
+        <div class="flow">
+            <div class="flow-step">
+                <div class="flow-num">1</div>
+                <div>
+                    <div class="flow-name">Только гель-очищение</div>
+                    <div class="flow-product">Round Lab Dokdo · без мицеллярки</div>
+                </div>
+            </div>
+            <div class="flow-step">
+                <div class="flow-num">2</div>
+                <div>
+                    <div class="flow-name">Восстановление барьера</div>
+                    <div class="flow-product">LRP Cicaplast B5 Mask или крем</div>
+                </div>
+            </div>
+        </div>
+        <div class="algo-tip">🚫 Запрещено после сауны: Vit C, азелаиновая, любые активы — барьер ослаблен, сосуды расширены</div>
+    </div>
+
+</div>
+
+<!-- ПРАВИЛА -->
+<div class="section" id="rules">
+
+    <div class="rules-card">
+        <div class="card-title">📌 Критические правила</div>
+        <div class="rule-item">
+            <div class="rule-dot"></div>
+            <div class="rule-text">Не вводить несколько новых средств одновременно — реакцию не атрибутировать</div>
+        </div>
+        <div class="rule-item">
+            <div class="rule-dot"></div>
+            <div class="rule-text">SPF — ежедневно, включая пасмурные дни и нахождение у окна</div>
+        </div>
+        <div class="rule-item">
+            <div class="rule-dot"></div>
+            <div class="rule-text">Не перегружать слоями: каждый слой — обоснование, не привычка</div>
+        </div>
+        <div class="rule-item">
+            <div class="rule-dot"></div>
+            <div class="rule-text">Контроль реакции кожи: 7 дней наблюдения после введения нового средства</div>
+        </div>
+        <div class="rule-item">
+            <div class="rule-dot"></div>
+            <div class="rule-text">Витамин C — только на сухую кожу, иначе нестабильность формулы</div>
+        </div>
+        <div class="rule-item">
+            <div class="rule-dot"></div>
+            <div class="rule-text">Азелаиновая — строго перед кремом, не после</div>
+        </div>
+        <div class="rule-item">
+            <div class="rule-dot"></div>
+            <div class="rule-text">Осенью — план введения ретиноидов. Без них anti-age работает на уровне поддержки, не коррекции</div>
+        </div>
+    </div>
+
+    <div class="rules-card">
+        <div class="card-title">⏱ Ожидания по срокам</div>
+        <div class="rule-item">
+            <div class="rule-dot"></div>
+            <div class="rule-text"><strong>2–4 недели:</strong> выравнивание тона, первые признаки сияния от витамина C</div>
+        </div>
+        <div class="rule-item">
+            <div class="rule-dot"></div>
+            <div class="rule-text"><strong>6–8 недель:</strong> уменьшение воспалений, стабилизация барьера</div>
+        </div>
+        <div class="rule-item">
+            <div class="rule-dot"></div>
+            <div class="rule-text"><strong>8–12 недель:</strong> заметное улучшение текстуры при добавлении ниацинамида / пептидов</div>
+        </div>
+        <div class="rule-item">
+            <div class="rule-dot"></div>
+            <div class="rule-text"><strong>Морщины и птоз</strong> — без ретиноидов не адресуются. Честный прогноз</div>
+        </div>
+    </div>
+
+    <div class="key-card">
+        <div class="key-title">🧠 Ключевое</div>
+        <div class="key-text"><strong>Защита → антиоксиданты → контроль воспаления → минимальные слои.</strong> Реакция кожи важнее отзывов. Азелаиновая — союзник, но не основа anti-age при 55+.</div>
+    </div>
+
+</div>
+
+<!-- РИСКИ -->
+<div class="section" id="risks">
+
+    <div class="stop-card">
+        <div class="stop-title">⛔ Стоп-флаги — убрать средство</div>
+        <div class="stop-item">
+            <div class="stop-text">🔥 Жжение дольше 10–15 минут</div>
+        </div>
+        <div class="stop-item">
+            <div class="stop-text">🔴 Устойчивое покраснение (держится &gt;30 мин)</div>
+        </div>
+        <div class="stop-item">
+            <div class="stop-text">🍂 Шелушение в сочетании с зудом</div>
+        </div>
+        <div class="stop-item">
+            <div class="stop-text">⚪ Появление закрытых комедонов</div>
+        </div>
+        <div class="stop-item">
+            <div class="stop-text">💧 Резкое усиление сухости или стянутости</div>
+        </div>
+        <div class="stop-action">❌ При любом флаге — убрать последнее введённое средство. Не несколько сразу</div>
+    </div>
+
+    <div class="rules-card">
+        <div class="card-title">⚠️ Провал-сценарии по средствам</div>
+        <div class="rule-item">
+            <div class="rule-dot" style="background:#C8855A"></div>
+            <div class="rule-text"><strong>Витамин C + влажная кожа</strong> → оксидация, жжение. Решение: наносить только на сухую</div>
+        </div>
+        <div class="rule-item">
+            <div class="rule-dot" style="background:#C8855A"></div>
+            <div class="rule-text"><strong>SPF скатывается</strong> → крем нанесён слишком толстым слоем. Решение: горошина крема, дать впитаться 2 мин</div>
+        </div>
+        <div class="rule-item">
+            <div class="rule-dot" style="background:#C8855A"></div>
+            <div class="rule-text"><strong>Азелаиновая после крема</strong> → барьер блокирует проникновение. Эффект нулевой</div>
+        </div>
+        <div class="rule-item">
+            <div class="rule-dot" style="background:#C8855A"></div>
+            <div class="rule-text"><strong>Тонер в избытке</strong> → липкость, нарушение нанесения следующего слоя. 2–3 капли максимум</div>
+        </div>
+        <div class="rule-item">
+            <div class="rule-dot" style="background:#C8855A"></div>
+            <div class="rule-text"><strong>Несколько новых средств одновременно</strong> → при реакции невозможно определить виновника</div>
+        </div>
+    </div>
+
+    <div class="rules-card">
+        <div class="card-title">🔄 Что делать если…</div>
+        <div class="rule-item">
+            <div class="rule-dot"></div>
+            <div class="rule-text"><strong>Кожа покраснела после C10</strong> → пауза 3 дня, затем через день, потом ежедневно</div>
+        </div>
+        <div class="rule-item">
+            <div class="rule-dot"></div>
+            <div class="rule-text"><strong>SPF даёт белый каст</strong> → UVMune 400 бесцветный, проверить количество — 2 пальца обязательно</div>
+        </div>
+        <div class="rule-item">
+            <div class="rule-dot"></div>
+            <div class="rule-text"><strong>Кожа стянута после очищения</strong> → CeraVe заменить на более липидный вариант (CeraVe Cream-to-Foam или Avène Toleriane)</div>
+        </div>
+        <div class="rule-item">
+            <div class="rule-dot"></div>
+            <div class="rule-text"><strong>Азелаиновая не даёт результата за 6 недель</strong> → увеличить частоту до ежедневной при отсутствии реакции</div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function switchTab(id, btn) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+    // re-trigger animations
+    const cards = document.querySelectorAll('#' + id + ' .step-card, #' + id + ' .algo-card, #' + id + ' .rules-card, #' + id + ' .stop-card, #' + id + ' .key-card');
+    cards.forEach((c, i) => {
+        c.style.animation = 'none';
+        c.offsetHeight;
+        c.style.animation = `fadeUp 0.3s ease ${i * 0.06}s both`;
+    });
+}
+</script>
+
+</body>
+</html>
