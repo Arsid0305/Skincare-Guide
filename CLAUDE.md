@@ -216,7 +216,7 @@ Claude инициирует проверку сам перед первым де
 - [ ] Нет чувствительных данных захардкоженных в JS
 
 ### CI/CD
-- [ ] В каждом workflow: минимальные права (`contents: read`)
+- [ ] В каждом workflow: минимальные права (`contents: write` — только для merge)
 - [ ] Секреты не выводятся в `run:` шагах через `echo`
 
 ---
@@ -227,8 +227,7 @@ Claude инициирует проверку сам перед первым де
 - Тип: статический HTML-проект
 - Деплой: GitHub Pages или прямой хостинг
 - Workflows:
-  - automerge.yml — ветка claude/... → dev
-  - promote.yml   — dev → main автоматически
+  - automerge.yml — ветка `claude/...` → `main` напрямую
 
 ---
 
@@ -245,13 +244,16 @@ Claude инициирует проверку сам перед первым де
 .github/
   workflows/
     automerge.yml
-    promote.yml
 .gitignore
 CLAUDE.md
 README.md
 tasks/
   todo.md
   lessons.md
+docs/
+  AUDIT_PROMPT.md
+scripts/
+  check_consistency.py
 index.html
 ```
 
@@ -267,14 +269,13 @@ index.html
 
 ## Рабочий процесс
 
-Схема: `ветки` → `dev` (авто) → `main` (авто)
+Схема: `claude/...` → `main` (авто)
 
 1. Claude пишет код → пушит в ветку `claude/...`
-2. `automerge.yml` мержит ветку в `dev` автоматически
-3. `promote.yml` мержит `dev` → `main` автоматически (без билда)
-4. Деплой автоматический
+2. `automerge.yml` мержит ветку в `main` автоматически
+3. Деплой автоматический
 
-**Правило после каждого пуша:** спросить пользователя «Мержить в main?» и ждать ответа. Не мержить без подтверждения.
+**Правило после каждого пуша:** создать PR в `main` (если не существует). `automerge.yml` мержит автоматически.
 
 ---
 
