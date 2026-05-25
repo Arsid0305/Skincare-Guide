@@ -227,7 +227,9 @@ Claude инициирует проверку сам перед первым де
 - Тип: статический HTML-проект
 - Деплой: GitHub Pages или прямой хостинг
 - Workflows:
-  - automerge.yml — ветка `claude/...` → `main` напрямую
+  - `automerge.yml` — PR из `claude/...` или `cursor/...` → validate → автомерж в `main` через GitHub API
+
+> **Требует:** Settings → General → «Allow auto-merge» включён в репо
 
 ---
 
@@ -269,13 +271,16 @@ index.html
 
 ## Рабочий процесс
 
-Схема: `claude/...` → `main` (авто)
+Схема: `claude/...` или `cursor/...` → PR → validate → автомерж в `main`
 
 1. Claude пишет код → пушит в ветку `claude/...`
-2. `automerge.yml` мержит ветку в `main` автоматически
-3. Деплой автоматический
+2. Создать PR в `main` (если не существует)
+3. `automerge.yml` запускается на PR-событии:
+   - Джоб `validate`: проверка консистентности + HTML-валидация
+   - Джоб `automerge` (после `validate`): мерж через GitHub API (`squash`)
+4. Никакого shell-мержа — только GitHub API
 
-**Правило после каждого пуша:** создать PR в `main` (если не существует). `automerge.yml` мержит автоматически.
+> **Требует:** Settings → General → «Allow auto-merge» включён в репо
 
 ---
 
