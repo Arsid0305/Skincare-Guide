@@ -185,24 +185,12 @@ git clone https://github.com/Arsid0305/TEMPLATE /tmp/arsid-template
 
 ### Ключевые инструменты
 
-- `ctx_execute` — запустить код в sandbox (JS/TS/Python/Shell/+8 языков). В контекст идёт только stdout. Экономия: 56 KB → 299 B
-- `ctx_execute_file` — обработать файл в sandbox (grep, парсинг, анализ)
+- `ctx_execute` — запустить код в sandbox. В контекст идёт только stdout
+- `ctx_execute_file` — обработать файл в sandbox
 - `ctx_batch_execute` — несколько команд в одном вызове
 - `ctx_fetch_and_index` — загрузить URL, сжать, проиндексировать (кэш 24 ч)
-- `ctx_search` — поиск по проиндексированному контенту (BM25 + FTS5)
-- `ctx_index` — проиндексировать markdown-текст
+- `ctx_search` — поиск по проиндексированному контенту
 - `ctx_stats` — статистика сессии и экономия токенов
-
-### Сессионная память
-
-При компрессии контекста context-mode сохраняет состояние сессии в SQLite и восстанавливает при старте. Claude не теряет нить — знает какие файлы редактировал, какие задачи были в процессе.
-
-### Диагностика
-
-```bash
-context-mode doctor   # проверить установку, хуки, рантаймы
-ctx_stats             # статистика экономии токенов за сессию
-```
 
 ---
 
@@ -228,8 +216,6 @@ Claude инициирует проверку сам перед первым де
 - Деплой: GitHub Pages или прямой хостинг
 - Workflows:
   - `automerge.yml` — PR из `claude/...` или `cursor/...` → validate → автомерж в `main` через GitHub API
-
-> **Требует:** Settings → General → «Allow auto-merge» включён в репо
 
 ---
 
@@ -273,12 +259,11 @@ index.html
 
 Схема: `claude/...` или `cursor/...` → PR → validate → автомерж в `main`
 
-1. Claude пишет код → пушит в ветку `claude/...`
-2. Создать PR в `main` (если не существует)
-3. `automerge.yml` запускается на PR-событии:
-   - Джоб `validate`: проверка консистентности + HTML-валидация
-   - Джоб `automerge` (после `validate`): мерж через GitHub API (`squash`)
+1. Claude пишет код → пушит в ветку `claude/...` → создаёт PR в `main`
+2. `automerge.yml` проверяет CLAUDE.md и `index.html` (validate job)
+3. После успешной проверки — мержит PR через GitHub API (squash)
 4. Никакого shell-мержа — только GitHub API
+5. Никогда не пушить напрямую в `main`
 
 > **Требует:** Settings → General → «Allow auto-merge» включён в репо
 
