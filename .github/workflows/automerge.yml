@@ -65,3 +65,8 @@ print('HTML syntax OK')
               pull_number: context.payload.pull_request.number,
               merge_method: 'squash'
             })
+            await github.rest.git.deleteRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: `heads/${context.payload.pull_request.head.ref}`
+            })
