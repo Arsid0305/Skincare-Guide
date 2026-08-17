@@ -31,3 +31,5 @@ tasks/                — todo/lessons
 - Репо: `github.com/Arsid0305/Skincare-Guide`
 - Деплой: статический хостинг / GitHub Pages
 - CI: `automerge.yml` — валидация + автомерж `claude/*` PR через GitHub API
+- 
+Pages restart: 17.08.2026
