@@ -184,11 +184,13 @@ Claude инициирует проверку сам перед первым де
 
 ## Инфраструктура
 
+_Проверено: 2026-08-19._
+
 - Репо: github.com/Arsid0305/Skincare-Guide
 - Тип: статический HTML-проект
-- Деплой: GitHub Pages или прямой хостинг
+- Деплой: GitHub Pages или прямой хостинг (проверить: где реально живёт прод на дату проверки)
 - Workflows:
-  - `automerge.yml` — PR из `claude/...` или `cursor/...` → validate → автомерж в `main` через GitHub API
+  - `automerge.yml` — PR из `claude/...` или `cursor/...` → validate → автомерж в `main` через GitHub API. ⚠️ Учитывать T&S-флаг аккаунта `Arsid0305` (Actions могут быть недоступны — тогда мерж через `mcp__github__merge_pull_request`).
 
 ---
 
