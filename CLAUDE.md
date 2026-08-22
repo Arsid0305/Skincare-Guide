@@ -1,4 +1,10 @@
-# Контекст проекта для Claude
+# Claude Adapter — Skincare-Guide
+
+> Тонкий адаптер. Универсальные правила экосистемы — в `docs/rules/core/*.md` (синкается из AI_OS SSOT).
+> Специфика проекта — в `docs/rules/scoped/skincare-guide-specific.md`.
+> Читай этот файл и `tasks/lessons.md` в начале каждого чата. В конце — обновляй «Открытые баги» и `tasks/lessons.md`.
+
+---
 
 ## ⛔ ГЛАВНОЕ ПРАВИЛО
 
@@ -7,178 +13,57 @@
 
 **Исключение:** баг внутри уже согласованного скоупа задачи — чини сам, сообщи после.
 
-> Правило: Читай этот файл, `tasks/lessons.md`, `wiki/lessons.md` и `wiki/decisions.md` из `arsid0305/llm_wiki` в начале каждого чата. В конце чата — обновляй «Открытые баги» и `tasks/lessons.md`.
+---
+
+## LLM_Wiki — контекст экосистемы
+
+В начале каждой сессии прочитать из `arsid0305/llm_wiki` (main):
+- `wiki/lessons.md`, `wiki/decisions.md` — кросс-проектные уроки и решения
+- `wiki/rules-architecture.md` — canon rules-архитектуры (если ещё не читал)
 
 ---
 
-## LLM_Wiki — Общий контекст экосистемы
+## Каноны (rules как атомы)
 
-В начале каждой сессии прочитать из репо `arsid0305/llm_wiki` (ветка `main`):
-- `wiki/lessons.md` — кросс-проектные уроки
-- `wiki/decisions.md` — ключевые архитектурные решения
+Универсальные правила — в `docs/rules/core/*.md` (SSOT в AI_OS, синкается автоматически):
 
-Даёт контекст по всем проектам без объяснений от пользователя.
+- Начало / конец сессии — [`docs/rules/core/session-lifecycle.md`](docs/rules/core/session-lifecycle.md)
+- Стиль общения / краткость — [`docs/rules/core/communication-style.md`](docs/rules/core/communication-style.md)
+- Git flow, запрет флагов — [`docs/rules/core/git-flow.md`](docs/rules/core/git-flow.md)
+- GitHub anti-abuse — [`docs/rules/core/github-anti-abuse.md`](docs/rules/core/github-anti-abuse.md)
+- BIG / SMALL — [`docs/rules/core/task-classification.md`](docs/rules/core/task-classification.md)
+- Принципы работы с кодом — [`docs/rules/core/code-principles.md`](docs/rules/core/code-principles.md)
+- Subagents — [`docs/rules/core/subagents.md`](docs/rules/core/subagents.md)
+- Audit-триггер — [`docs/rules/core/audit-trigger.md`](docs/rules/core/audit-trigger.md)
+- Context Mode — `llm_wiki/wiki/context-mode.md`
+- Выбор модели `haiku`/`sonnet`/`opus` — `llm_wiki/wiki/workflow.md`
 
----
+**Специфика Skincare-Guide** (scoped): [`docs/rules/scoped/skincare-guide-specific.md`](docs/rules/scoped/skincare-guide-specific.md) — HTML/JS review, безопасность (XSS/SRI), стек, среда.
 
-## Глобальный стандарт
-
-Этот файл — живой стандарт для всех проектов.
-
-- Каждый новый проект создаётся на основе этого файла
-- Все проекты используют одну шаблонную архитектуру — выбирая нужное под проект
-- Если в проекте появился новый паттерн или механизм — он предлагается для обсуждения
-- После одобрения — вносится сюда и наследуется всеми последующими проектами
-
----
-
-## Стиль общения Claude
-- Отвечать только результатом — без вступлений («сейчас сделаю», «давай разберёмся», «хороший вопрос»)
-- Не рассуждать вслух, не объяснять что собираешься сделать до того как сделал
-- Не заполнять контекстное окно внутренними рассуждениями
-- Коротко и по делу — одно предложение вместо абзаца
-- Без лишних объяснений если не просят
-- Отвечать на языке пользователя
+Архитектура rules и правила синка — [`docs/rules/README.md`](docs/rules/README.md).
 
 ---
 
 ## TEMPLATE репо — автодоступ
 
-`github.com/Arsid0305/TEMPLATE` содержит шаблоны для всех проектов.
-
-Claude читает его через git:
 ```bash
 git clone https://github.com/Arsid0305/TEMPLATE /tmp/arsid-template
 ```
-
-Репо публичное — работает без токена.
-
----
-
-## BIG vs SMALL — определить до начала
-
-Спросить пользователя: это большая или маленькая задача?
-
-**BIG** (новая фича, архитектура, рефакторинг):
-- Написать план в `tasks/todo.md` с чекбоксами
-- Провести полный review по разделам ниже
-- Пауза после каждого раздела — ждать фидбек
-- Не писать код до финального «делай»
-
-**SMALL** (баг, мелкое изменение, стиль):
-- Один фокусный вопрос на раздел если нужно
-- Краткий план (2-3 строки), подождать «делай»
-
----
-
-## Перед написанием кода — Review
-
-**Не начинать реализацию до завершения review и подтверждения пользователя.**
-
-Для каждой найденной проблемы:
-1. Описание проблемы
-2. Почему важно
-3. 2-3 варианта решения (включая «не трогать» если разумно)
-4. Для каждого варианта: усилие / риск / импакт / стоимость поддержки
-5. Рекомендация + причина
-
-### Архитектура
-- Границы компонентов, граф зависимостей
-- Точки отказа, масштабируемость
-- Безопасность (XSS, SRI, захардкоженные данные)
-
-### Качество кода
-- DRY-нарушения — помечать агрессивно
-- Обработка ошибок и edge cases
-- Технический долг, over/under engineering
-
-### Тесты
-- Покрытие (unit, integration, e2e)
-- Непокрытые сценарии отказа
-- Качество assertions
-
-### Производительность
-- Размер ресурсов (изображения, JS, CSS)
-- Время загрузки страницы
 
 ---
 
 ## Task Management
 
 - `tasks/todo.md` — план с чекбоксами до начала любой BIG задачи. Отмечать выполненное по ходу.
-- `tasks/lessons.md` — паттерны ошибок. Фиксировать после каждой правки от пользователя.
-
-Формат записи в `tasks/lessons.md`:
-```
-## [дата] [краткое название ситуации]
-**Что произошло:** ...
-**Правило:** ...
-```
-
----
-
-## Верификация перед Done
-
-Никогда не говорить «готово» без:
-- Проверки что код работает (открыть в браузере, проверить поведение)
-- Сравнения до/после если релевантно
-- Вопроса себе: «Одобрил бы это Senior Engineer в проде?»
-
----
-
-## Subagents и выбор модели
-
-Канон — `AI_OS/CLAUDE.md` (Subagents) + `llm_wiki/wiki/workflow.md` (таблица `haiku`/`sonnet`/`opus`).
-
----
-
-## Self-Improvement Loop
-
-После каждой правки от пользователя:
-1. Понять паттерн ошибки
-2. Записать правило в `tasks/lessons.md`
-3. Читать `tasks/lessons.md` в начале следующего чата
-
----
+- `tasks/lessons.md` — паттерны ошибок (формат — в [`docs/rules/core/session-lifecycle.md`](docs/rules/core/session-lifecycle.md) §«Формат lessons.md»).
 
 ## Предложение улучшений в стандарт
 
-Если в проекте появился новый паттерн, инструмент или решение лучше существующего:
+Если в проекте появился новый паттерн лучше существующего:
 1. Не применять молча — сначала предложить пользователю
 2. Описать: что это, почему лучше, какой трейдофф
 3. Ждать решения: принять в стандарт / использовать только в этом проекте / отклонить
-4. После одобрения — внести в `~/.claude/CLAUDE.md`
-
----
-
-## Core Principles
-
-- **Простота:** минимальный импакт, трогать только необходимое
-- **Корень проблемы:** не хакать, искать причину, не временные фиксы
-- **Явность над хитростью:** явные решения лучше умных
-- **Тесты:** лучше лишний тест, чем непокрытый edge case
-- **Элегантность:** для нетривиальных изменений — спросить себя «есть ли более элегантный способ?»
-
----
-
-## Context Mode
-
-Канон — `llm_wiki/wiki/context-mode.md`.
-
----
-
-## Безопасность — чеклист перед первым деплоем
-
-Claude инициирует проверку сам перед первым деплоем в `main`. Молча не пропускать.
-
-### Безопасность HTML/JS
-- [ ] Нет `innerHTML` без санитизации пользовательских данных
-- [ ] Внешние скрипты загружаются с `integrity` (SRI)
-- [ ] Нет чувствительных данных захардкоженных в JS
-
-### CI/CD
-- [ ] В каждом workflow: минимальные права (`contents: write` — только для merge)
-- [ ] Секреты не выводятся в `run:` шагах через `echo`
+4. После одобрения — внести в `~/.claude/CLAUDE.md` (или в `docs/rules/core/*.md` через AI_OS SSOT)
 
 ---
 
@@ -187,68 +72,26 @@ Claude инициирует проверку сам перед первым де
 _Проверено: 2026-08-19._
 
 - Репо: github.com/Arsid0305/Skincare-Guide
-- Тип: статический HTML-проект
+- Тип: статический HTML-проект (PWA)
 - Деплой: GitHub Pages или прямой хостинг (проверить: где реально живёт прод на дату проверки)
 - Workflows:
-  - `automerge.yml` — PR из `claude/...` или `cursor/...` → validate → автомерж в `main` через GitHub API. ⚠️ Учитывать T&S-флаг аккаунта `Arsid0305` (Actions могут быть недоступны — тогда мерж через `mcp__github__merge_pull_request`).
+  - `automerge.yml` — PR из `claude/...` или `cursor/...` → validate → автомерж в `main` через GitHub API (squash). ⚠️ Учитывать T&S-флаг аккаунта `Arsid0305` — мерж только вручную кнопкой в веб-интерфейсе (см. `docs/rules/core/github-anti-abuse.md`).
 
----
-
-## Стек
-
-- HTML + CSS + JavaScript (без фреймворков)
-- PWA: иконки (`icon-192.png`, `icon-512.png`, `apple-touch-icon.png`)
-
----
-
-## Структура проекта
+## Структура
 
 ```
-.github/
-  workflows/
-    automerge.yml
+.github/workflows/automerge.yml
 .gitignore
 CLAUDE.md
 README.md
-tasks/
-  todo.md
-  lessons.md
-docs/
-  AUDIT_PROMPT.md
-scripts/
-  check_consistency.py
+tasks/{todo.md,lessons.md}
+docs/{AUDIT_PROMPT.md, rules/}
+scripts/check_consistency.py
 index.html
 ```
 
----
-
-## Среда Claude
-
-- Node.js: не требуется
-- npm: не требуется
-- Supabase CLI: не используется
-
----
-
 ## Рабочий процесс
-
-Схема: `claude/...` или `cursor/...` → PR → validate → автомерж в `main`
-
-1. Claude пишет код → пушит в ветку `claude/...` → создаёт PR в `main`
-2. `automerge.yml` проверяет CLAUDE.md и `index.html` (validate job)
-3. После успешной проверки — мержит PR через GitHub API (squash)
-4. Никакого shell-мержа — только GitHub API
-5. Никогда не пушить напрямую в `main`
-
-> **Требует:** Settings → General → «Allow auto-merge» включён в репо
-
----
-
-## Правила Git
-
-- Разрабатывать на ветке `claude/...`, никогда не пушить напрямую в `main`
-- Никогда не использовать `--no-verify`, `--force`, `--no-gpg-sign`
-- Синхронизация с основной: `git pull origin main`
+Ветка `claude/...` → PR в `main` (не draft) → validate → `automerge.yml` через GitHub API (squash). Никогда не пушить в `main` напрямую.
 
 ---
 
