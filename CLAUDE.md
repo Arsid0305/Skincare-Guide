@@ -69,10 +69,13 @@ git clone https://github.com/Arsid0305/TEMPLATE /tmp/arsid-template
 
 ## Инфраструктура
 
+_Проверено: 2026-08-19._
+
 - Репо: github.com/Arsid0305/Skincare-Guide
 - Тип: статический HTML-проект (PWA)
-- Деплой: GitHub Pages или прямой хостинг
-- Workflows: `automerge.yml` — PR из `claude/...` или `cursor/...` → validate → автомерж в `main` через GitHub API (squash)
+- Деплой: GitHub Pages или прямой хостинг (проверить: где реально живёт прод на дату проверки)
+- Workflows:
+  - `automerge.yml` — PR из `claude/...` или `cursor/...` → validate → автомерж в `main` через GitHub API (squash). ⚠️ Учитывать T&S-флаг аккаунта `Arsid0305` — мерж только вручную кнопкой в веб-интерфейсе (см. `docs/rules/core/github-anti-abuse.md`).
 
 ## Структура
 
