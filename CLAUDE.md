@@ -97,4 +97,4 @@ index.html
 
 ## Открытые баги
 
-_(пусто)_
+- 2026-10-26: `scripts/check_consistency.py` падает на `main`: ищет `claude/**` и `cursor/**` в `automerge.yml`, а workflow фильтрует через `startsWith(github.head_ref, ...)`. Шаг validate в CI красный на любом PR. Не чинится без решения владелицы (вне задачи).
