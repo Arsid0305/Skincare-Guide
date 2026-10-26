@@ -75,7 +75,7 @@ _Проверено: 2026-08-19._
 - Тип: статический HTML-проект (PWA)
 - Деплой: GitHub Pages или прямой хостинг (проверить: где реально живёт прод на дату проверки)
 - Workflows:
-  - `automerge.yml` — PR из `claude/...` или `cursor/...` → validate → автомерж в `main` через GitHub API (squash). ⚠️ Учитывать T&S-флаг аккаунта `Arsid0305` — мерж только вручную кнопкой в веб-интерфейсе (см. `docs/rules/core/github-anti-abuse.md`).
+  - `automerge.yml` (имя историческое) — только CI: PR из `claude/...` или `cursor/...` → validate (consistency check + HTML). Автомержа нет (удалён 2026-10-27) — PR мержит владелица кнопкой, мерж через API запрещён (`AI_OS/docs/rules/core/github-anti-abuse.md`).
 
 ## Структура
 
@@ -91,7 +91,7 @@ index.html
 ```
 
 ## Рабочий процесс
-Ветка `claude/...` → PR в `main` (не draft) → validate → `automerge.yml` через GitHub API (squash). Никогда не пушить в `main` напрямую.
+Ветка `claude/...` → PR в `main` (не draft) → validate. Автомержа нет — мержит владелица кнопкой. Никогда не пушить в `main` напрямую.
 
 ---
 
