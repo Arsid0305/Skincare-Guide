@@ -13,7 +13,7 @@
 Стек: HTML + CSS + JavaScript, PWA (icon-192, icon-512, apple-touch-icon)
 Бэкенд: нет
 Внешние API: нет
-CI/CD: automerge.yml (validate HTML → merge через GitHub API)
+CI/CD: automerge.yml (только validate HTML, мерж вручную)
 Деплой: GitHub Pages / статический хостинг
 ```
 

@@ -18,7 +18,7 @@
 - Repo: github.com/Arsid0305/Skincare-Guide
 
 Workflows:
-- `automerge.yml` — `claude/** | cursor/**` → `main` авто ✅
+- `automerge.yml` — CI для `claude/** | cursor/**`, автомерж удалён ✅
 - `promote.yml` — удалён ❌
 - `deploy.yml` — не используется ❌
 
@@ -45,7 +45,7 @@ Workflows:
 
 ```
 .github/workflows/
-  automerge.yml        — авто-мерж ветки в main
+  automerge.yml        — CI-проверки PR (без автомержа)
 docs/
   AUDIT_PROMPT.md      — контекст для аудита
 scripts/
