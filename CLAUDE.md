@@ -1,6 +1,6 @@
 # Claude Adapter — Skincare-Guide
 
-> Тонкий адаптер. Универсальные правила экосистемы — в `docs/rules/core/*.md` (синкается из AI_OS SSOT).
+> Тонкий адаптер. Универсальные правила экосистемы — в `AI_OS/docs/rules/core/*.md` (SSOT, копий в этом репо нет).
 > Специфика проекта — в `docs/rules/scoped/skincare-guide-specific.md`.
 > Читай этот файл и `tasks/lessons.md` в начале каждого чата. В конце — обновляй «Открытые баги» и `tasks/lessons.md`.
 
@@ -25,22 +25,23 @@
 
 ## Каноны (rules как атомы)
 
-Универсальные правила — в `docs/rules/core/*.md` (SSOT в AI_OS, синкается автоматически):
+Универсальные правила — в `AI_OS/docs/rules/core/*.md` (SSOT, копий в этом репо нет). Если AI_OS не подключён к сессии — попросить подключить, по памяти не работать:
 
-- Начало / конец сессии — [`docs/rules/core/session-lifecycle.md`](docs/rules/core/session-lifecycle.md)
-- Стиль общения / краткость — [`docs/rules/core/communication-style.md`](docs/rules/core/communication-style.md)
-- Git flow, запрет флагов — [`docs/rules/core/git-flow.md`](docs/rules/core/git-flow.md)
-- GitHub anti-abuse — [`docs/rules/core/github-anti-abuse.md`](docs/rules/core/github-anti-abuse.md)
-- BIG / SMALL — [`docs/rules/core/task-classification.md`](docs/rules/core/task-classification.md)
-- Принципы работы с кодом — [`docs/rules/core/code-principles.md`](docs/rules/core/code-principles.md)
-- Subagents — [`docs/rules/core/subagents.md`](docs/rules/core/subagents.md)
-- Audit-триггер — [`docs/rules/core/audit-trigger.md`](docs/rules/core/audit-trigger.md)
+- Начало / конец сессии — [`AI_OS/docs/rules/core/session-lifecycle.md`](https://github.com/Arsid0305/AI_OS/blob/main/docs/rules/core/session-lifecycle.md)
+- Стиль общения / краткость — [`AI_OS/docs/rules/core/communication-style.md`](https://github.com/Arsid0305/AI_OS/blob/main/docs/rules/core/communication-style.md)
+- Git flow, запрет флагов — [`AI_OS/docs/rules/core/git-flow.md`](https://github.com/Arsid0305/AI_OS/blob/main/docs/rules/core/git-flow.md)
+- GitHub anti-abuse — [`AI_OS/docs/rules/core/github-anti-abuse.md`](https://github.com/Arsid0305/AI_OS/blob/main/docs/rules/core/github-anti-abuse.md)
+- BIG / SMALL — [`AI_OS/docs/rules/core/task-classification.md`](https://github.com/Arsid0305/AI_OS/blob/main/docs/rules/core/task-classification.md)
+- Принципы работы с кодом — [`AI_OS/docs/rules/core/code-principles.md`](https://github.com/Arsid0305/AI_OS/blob/main/docs/rules/core/code-principles.md)
+- Subagents — [`AI_OS/docs/rules/core/subagents.md`](https://github.com/Arsid0305/AI_OS/blob/main/docs/rules/core/subagents.md)
+- Audit-триггер — [`AI_OS/docs/rules/core/audit-trigger.md`](https://github.com/Arsid0305/AI_OS/blob/main/docs/rules/core/audit-trigger.md)
+- Разрешения веб-сессий — [`AI_OS/docs/rules/core/web-permissions.md`](https://github.com/Arsid0305/AI_OS/blob/main/docs/rules/core/web-permissions.md)
 - Context Mode — `llm_wiki/wiki/context-mode.md`
 - Выбор модели `haiku`/`sonnet`/`opus` — `llm_wiki/wiki/workflow.md`
 
 **Специфика Skincare-Guide** (scoped): [`docs/rules/scoped/skincare-guide-specific.md`](docs/rules/scoped/skincare-guide-specific.md) — HTML/JS review, безопасность (XSS/SRI), стек, среда.
 
-Архитектура rules и правила синка — [`docs/rules/README.md`](docs/rules/README.md).
+Архитектура rules — [`AI_OS/docs/rules/README.md`](https://github.com/Arsid0305/AI_OS/blob/main/docs/rules/README.md).
 
 ---
 
@@ -55,7 +56,7 @@ git clone https://github.com/Arsid0305/TEMPLATE /tmp/arsid-template
 ## Task Management
 
 - `tasks/todo.md` — план с чекбоксами до начала любой BIG задачи. Отмечать выполненное по ходу.
-- `tasks/lessons.md` — паттерны ошибок (формат — в [`docs/rules/core/session-lifecycle.md`](docs/rules/core/session-lifecycle.md) §«Формат lessons.md»).
+- `tasks/lessons.md` — паттерны ошибок (формат — в [`AI_OS/docs/rules/core/session-lifecycle.md`](https://github.com/Arsid0305/AI_OS/blob/main/docs/rules/core/session-lifecycle.md) §«Формат lessons.md»).
 
 ## Предложение улучшений в стандарт
 
@@ -63,7 +64,7 @@ git clone https://github.com/Arsid0305/TEMPLATE /tmp/arsid-template
 1. Не применять молча — сначала предложить пользователю
 2. Описать: что это, почему лучше, какой трейдофф
 3. Ждать решения: принять в стандарт / использовать только в этом проекте / отклонить
-4. После одобрения — внести в `~/.claude/CLAUDE.md` (или в `docs/rules/core/*.md` через AI_OS SSOT)
+4. После одобрения — внести в `~/.claude/CLAUDE.md` (или в `AI_OS/docs/rules/core/*.md`, SSOT)
 
 ---
 
@@ -97,4 +98,4 @@ index.html
 
 ## Открытые баги
 
-_(пусто)_
+- 2026-10-26: `scripts/check_consistency.py` падает на `main`: ищет `claude/**` и `cursor/**` в `automerge.yml`, а workflow фильтрует через `startsWith(github.head_ref, ...)`. Шаг validate в CI красный на любом PR. Не чинится без решения владелицы (вне задачи).
