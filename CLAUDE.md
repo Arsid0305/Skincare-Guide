@@ -98,4 +98,5 @@ index.html
 
 ## Открытые баги
 
-- 2026-10-26: `scripts/check_consistency.py` падает на `main`: ищет `claude/**` и `cursor/**` в `automerge.yml`, а workflow фильтрует через `startsWith(github.head_ref, ...)`. Шаг validate в CI красный на любом PR. Не чинится без решения владелицы (вне задачи).
+- ~~2026-10-26: `scripts/check_consistency.py` падал на `main`~~ ✅ исправлено в PR #18 (2026-10-28), проверка проходит.
+- ~~Workflow `automerge.yml` выключен вручную в настройках GitHub~~ ✅ включён 2026-11-15. Выключила владелица 2026-09-24 во всех репо, когда автомерж слил LLM_Wiki#47; в остальных репо после удаления автомержа проверку включили, здесь забыли. Из-за этого PR #19 прошёл без проверки. Проверять состояние: `GET /repos/Arsid0305/Skincare-Guide/actions/workflows` → `state: active`.
